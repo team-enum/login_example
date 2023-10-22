@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>로그인</title>
+   <style>
+      form label{
+         display: block;
+      }
+   </style>
+</head>
+<body>
+   <h3>로그인</h3>
+   <form method="post" th:action>
+      <label>아이디 : 
+         <input type="text" name="username"/>
+      </label>
+      <label>비밀번호 : 
+         <input type="password" name="password"/>
+      </label>
+
+      <input type="submit" value="로그인"/>
+   </form>
+</body>
+</html>

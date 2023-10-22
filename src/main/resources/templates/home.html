@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>spring</title>
+</head>
+<body>
+   <h2>Hello World</h2>
+   <ul sec:authorize="isAnonymous()">
+      <li>
+         <a th:href="@{member/login}">로그인</a>
+      </li>
+      <li>
+         <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=33192f35c9df74eb4a8c5cb90274db07&redirect_uri=http%3A%2F%2Flocalhost%3A9090%2Fkakao%2Foauth">
+            카카오 로그인</a>
+      </li>
+      <li>
+         <a th:href="@{member/join}">회원가입</a>
+      </li>
+   </ul>
+
+   <ul sec:authorize="isAuthenticated()">
+      <li>
+         <a th:href="@{member/mypage}">마이페이지</a>
+      </li>
+      <li>
+         <a th:href="@{member/logout}">로그아웃</a>
+      </li>
+   </ul>
+</body>
+</html>

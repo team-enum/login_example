@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>회원가입</title>
+   <style>
+      form label{
+         display: block;
+      }
+   </style>
+</head>
+<body>
+   <h3>회원가입</h3>
+   <form method="post" th:action th:object="${memberDTO}">
+      <label>아이디 : 
+         <input type="text" th:field="*{username}"/>
+      </label>
+      <label>비밀번호 : 
+         <input type="password" th:field="*{password}"/>
+      </label>
+      <label>이름 : 
+         <input type="text" th:field="*{realname}"/>
+      </label>
+
+      <input type="submit" value="회원가입"/>
+   </form>
+</body>
+</html>
