@@ -20,8 +20,8 @@ public class OauthKakaoController {
    @ResponseBody
    public Object receiveAuthorizeCode(@RequestParam String code){
       KakaoToken token = kakaoOauth.receiveToken(code);
-      KakaoUserInfo kakaoUserInfo = kakaoOauth.receiveUserInformation(token.getAccess_token());
-      return kakaoUserInfo;
+      KakaoUserInfo userInfo = kakaoOauth.receiveUserInformation(token.getAccess_token());
+      return userInfo;
    }
 
    // @GetMapping("/kakao/oauth/logout")
