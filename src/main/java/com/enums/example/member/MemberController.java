@@ -1,4 +1,4 @@
-package com.enums.example.member.controller;
+package com.enums.example.member;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -6,10 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.enums.example.member.domain.Member;
-import com.enums.example.member.dto.MemberDTO;
-import com.enums.example.member.service.MemberService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.enums.example.member.domain;
+package com.enums.example.member;
 
 import java.time.LocalDateTime;
 

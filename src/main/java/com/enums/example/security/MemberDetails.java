@@ -6,14 +6,14 @@ import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.enums.example.member.domain.Member;
+import com.enums.example.member.Member;
 
-public class SecurityMember implements UserDetails{
+public class MemberDetails implements UserDetails{
 
    private final Member member;
    private final Set<GrantedAuthority> authorities;
 
-   public SecurityMember(Member member, Collection<? extends GrantedAuthority> authorities){
+   public MemberDetails(Member member, Collection<? extends GrantedAuthority> authorities){
       this.member = member;
       this.authorities = Set.copyOf(authorities);
    }

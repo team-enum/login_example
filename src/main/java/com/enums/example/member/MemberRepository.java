@@ -1,8 +1,6 @@
-package com.enums.example.member.repository;
+package com.enums.example.member;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.enums.example.member.domain.Member;
 
 public interface MemberRepository extends JpaRepository<Member, Long>{
    

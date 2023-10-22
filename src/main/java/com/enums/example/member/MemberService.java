@@ -1,9 +1,10 @@
-package com.enums.example.member.service;
+package com.enums.example.member;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,9 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.enums.example.member.domain.Member;
-import com.enums.example.member.repository.MemberRepository;
-import com.enums.example.security.SecurityMember;
+import com.enums.example.security.MemberDetails;
 
 import lombok.RequiredArgsConstructor;
 
@@ -34,9 +33,9 @@ public class MemberService implements UserDetailsService {
 
    // 회원가입
    @Transactional
-   public Member join(Member member) throws RuntimeException {
+   public Member join(Member member) throws BadCredentialsException {
       if(checkForDuplicateUsername(member.getUsername())){
-         throw new RuntimeException("아이디가 중복되었습니다.");
+         throw new BadCredentialsException("아이디가 중복되었습니다.");
       }
       
       String encodedPassowrd = passwordEncoder.encode(member.getPassword());
@@ -56,7 +55,7 @@ public class MemberService implements UserDetailsService {
       List<GrantedAuthority> authorities = new ArrayList<>();
       authorities.add(new SimpleGrantedAuthority("USER"));
    
-      return new SecurityMember(member, authorities);
+      return new MemberDetails(member, authorities);
    }
 
    

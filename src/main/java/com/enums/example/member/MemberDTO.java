@@ -1,4 +1,4 @@
-package com.enums.example.member.dto;
+package com.enums.example.member;
 
 import lombok.Getter;
 import lombok.Setter;

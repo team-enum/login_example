@@ -8,14 +8,20 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurity {
+public class WebSecurityConfig {
    
    @Bean
    public PasswordEncoder passwordEncoder(){
       return new BCryptPasswordEncoder();
+   }
+
+   @Bean
+   public RestTemplate restTemplate(){
+      return new RestTemplate();
    }
 
    @Bean
