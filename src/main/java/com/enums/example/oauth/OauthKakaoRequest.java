@@ -27,6 +27,7 @@ public class OauthKakaoRequest {
    private String redirectUri;
 
    private final String tokenURL = "https://kauth.kakao.com/oauth/token";
+   
    private final String logoutURL = "https://kapi.kakao.com/v1/user/logout";
    private final String userInfoURL = "https://kapi.kakao.com/v2/user/me";
 

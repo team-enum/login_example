@@ -16,6 +16,7 @@ public class KakaoUserInfo {
    
    @JsonIgnoreProperties(ignoreUnknown = true)
    @Getter @ToString @NoArgsConstructor
+public
    class Properties{
       private String nickname;
       private String profile_image;
