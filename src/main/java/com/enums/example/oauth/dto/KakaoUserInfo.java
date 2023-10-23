@@ -14,6 +14,9 @@ public class KakaoUserInfo {
    private String connected_at;
    private Properties properties;
    
+   public String getNickname(){
+      return properties.getNickname();
+   }
    @JsonIgnoreProperties(ignoreUnknown = true)
    @Getter @ToString @NoArgsConstructor
    class Properties{

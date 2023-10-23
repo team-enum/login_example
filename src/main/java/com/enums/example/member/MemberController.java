@@ -1,11 +1,16 @@
 package com.enums.example.member;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.enums.example.security.MemberDetails;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -41,7 +46,11 @@ public class MemberController {
 
    // 마이페이지
    @GetMapping("/mypage")
-   public String mypageView(){
+   public String mypageView(
+         Authentication authentication,
+         @AuthenticationPrincipal MemberDetails member, 
+         Model model){
+      model.addAttribute("member", member);
       return "member/mypage";
    }
 }
